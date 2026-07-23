@@ -1,51 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F8F9FA">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Programming"
-        android:textSize="25dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lesson 1: Code"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"/>
-    <ImageView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@drawable/programming_ls1"
-        android:layout_gravity="center"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="General Introduction"
-        android:layout_marginLeft="10dp"
-        android:textStyle="bold"
-        android:textSize="16dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="A programming language is how we write code, what keywords we use, to tell the computer what to do.
-Different programming languages are used for different purposes, like JavaScript is good for web development, Python is good for AI, and C/C++ is good for programming microcontrollers.
-What we actually have to write to make use of for example variables, or functions, is slightly different depending on the programming language, and that is called the syntax of the programming language."
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"/>
-
-    <Button
-        android:id="@+id/btnBack"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="#D72727"
-        android:text="Back"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"/>
-</LinearLayout>
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Programming"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="#1A237E"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"/>
+
+        <View
+            android:layout_width="60dp"
+            android:layout_height="4dp"
+            android:background="#4A62E2"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lesson 1: Code"
+            android:textColor="#4A62E2"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginBottom="15dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="25dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/programming_ls1"
+                android:scaleType="centerInside"
+                android:padding="10dp"
+                android:background="#FFFFFF"/>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="General Introduction"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#212121"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A programming language is how we write code, what keywords we use, to tell the computer what to do.\n\nDifferent programming languages are used for different purposes, like JavaScript is good for web development, Python is good for AI, and C/C++ is good for programming microcontrollers.\n\nWhat we actually have to write to make use of for example variables, or functions, is slightly different depending on the programming language, and that is called the syntax of the programming language."
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp"
+            android:textColor="#424242"
+            android:layout_marginBottom="30dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:backgroundTint="#4A62E2"
+            android:text="Ask AI"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp"
+            app:cornerRadius="8dp"/>
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:backgroundTint="#EF5350"
+            android:text="Back"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:cornerRadius="8dp"
+            android:layout_marginBottom="20dp"/>
+
+    </LinearLayout>
+</ScrollView>

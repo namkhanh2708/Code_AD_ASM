@@ -25,16 +25,7 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
 
     public ArrayList<CategoryModel> categoryModels;
     public Context context;
-    private OnCategoryMenuListener listener;
     private int selectedPosition = -1;
-
-    public interface OnCategoryMenuListener {
-        void onCategorySelected(CategoryModel category);
-    }
-
-    public void setOnCategoryMenuListener(OnCategoryMenuListener listener) {
-        this.listener = listener;
-    }
 
     public CategoryListAdapter(ArrayList<CategoryModel> model, Context myContext) {
         categoryModels = model;
@@ -65,15 +56,10 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
             }
         });
 
-        // Lesson 1 navigation
+        // Lesson navigation
         if (model.getCategoryName().equalsIgnoreCase("Programming")) {
-            holder.btnLs1.setText("Lesson 1");
             holder.btnLs2.setVisibility(View.GONE);
-        } else if (model.getCategoryName().equalsIgnoreCase("Discrete Mathematics")) {
-            holder.btnLs1.setText("Lesson 1");
-            holder.btnLs2.setVisibility(View.VISIBLE);
         } else {
-            holder.btnLs1.setText("Lesson 1");
             holder.btnLs2.setVisibility(View.VISIBLE);
         }
 
@@ -93,7 +79,7 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
             // Placeholder for Lesson 2
         });
 
-
+        // Selection style logic
         if (selectedPosition == position) {
             holder.itemView.setBackgroundColor(Color.LTGRAY);
         } else {
@@ -105,35 +91,12 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
             selectedPosition = holder.getAdapterPosition();
             notifyItemChanged(previousSelected);
             notifyItemChanged(selectedPosition);
-
-            if (listener != null) {
-                listener.onCategorySelected(model);
-            }
         });
-    }
-
-    public CategoryModel getSelectedCategory() {
-        if (selectedPosition != -1 && selectedPosition < categoryModels.size()) {
-            return categoryModels.get(selectedPosition);
-        }
-        return null;
-    }
-
-    public int getSelectedPosition() {
-        return selectedPosition;
     }
 
     @Override
     public int getItemCount() {
         return categoryModels.size();
-    }
-
-    public void removeCategory(int position) {
-        if (position >= 0 && position < categoryModels.size()) {
-            categoryModels.remove(position);
-            selectedPosition = -1;
-            notifyDataSetChanged();
-        }
     }
 
     public static class CategoryItemViewHolder extends RecyclerView.ViewHolder {

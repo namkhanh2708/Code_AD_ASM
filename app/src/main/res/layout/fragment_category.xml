@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,41 +9,160 @@
     tools:context=".Fragments.CategoryFragment">
 
     <LinearLayout
-        android:id="@+id/layoutButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Button Create -->
-        <Button
-            android:id="@+id/btnCreateCategory"
+        <!-- Programming Category Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardProgramming"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#03A9F4"
-            android:text="Create a new Category"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+            android:layout_margin="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/layoutHeaderProg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/imgCategoryProg"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:src="@drawable/logo_btec"
+                        android:contentDescription="Programming"/>
+
+                    <TextView
+                        android:id="@+id/tvNameCategoryProg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/imgCategoryProg"
+                        android:layout_marginStart="18dp"
+                        android:text="Programming"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+
+                    <ImageView
+                        android:id="@+id/imgDropDownProg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/arrow_down_float" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutDropDownProg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <Button
+                        android:id="@+id/btnProgLs1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#6FB3E0"
+                        android:textColor="@color/black"
+                        android:text="Lesson 1"
+                        android:layout_marginTop="5dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Discrete Mathematics Category Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardMath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/layoutHeaderMath"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/imgCategoryMath"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:src="@drawable/logo_btec"
+                        android:contentDescription="Discrete Mathematics"/>
+
+                    <TextView
+                        android:id="@+id/tvNameCategoryMath"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/imgCategoryMath"
+                        android:layout_marginStart="18dp"
+                        android:text="Discrete Mathematics"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+
+                    <ImageView
+                        android:id="@+id/imgDropDownMath"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/arrow_down_float" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutDropDownMath"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <Button
+                        android:id="@+id/btnMathLs1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#6FB3E0"
+                        android:textColor="@color/black"
+                        android:text="Lesson 1"
+                        android:layout_marginTop="5dp"/>
+
+                    <Button
+                        android:id="@+id/btnMathLs2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lesson 2"
+                        android:background="#6FB3E0"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="5dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- RecyclerView (if still needed for other categories) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"/>
+
     </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvCategory"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/btnDelete"
-        android:layout_below="@id/layoutButtons"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp" />
-
-    <Button
-        android:id="@+id/btnDelete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="60dp"
-        android:background="#F44336"
-        android:text="Delete Selected Category"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:visibility="gone" />
-
-</RelativeLayout>
+</ScrollView>
