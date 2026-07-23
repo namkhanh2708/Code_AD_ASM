@@ -15,10 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".MainActivity"/>
         <activity android:name=".activities.SignUpActivity"/>
         <activity android:name=".activities.LoginActivity"/>
-        <activity android:name=".activities.categories.AddCategoryActivity"/>
         <activity android:name=".activities.MathlsActivity"/>
         <activity android:name=".activities.ProgrammingActivity"/>
         <activity

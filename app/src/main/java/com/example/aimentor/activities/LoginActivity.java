@@ -13,7 +13,6 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.aimentor.MainActivity;
 import com.example.aimentor.R;
 import com.example.aimentor.models.UserModel;
 import com.example.aimentor.repository.UserRepository;
