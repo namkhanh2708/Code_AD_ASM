@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.aimentor.R;
 import com.example.aimentor.activities.MathlsActivity;
+import com.example.aimentor.activities.MenuActivity;
 import com.example.aimentor.activities.ProgrammingActivity;
 
 public class HomeFragment extends Fragment {
@@ -56,6 +58,7 @@ public class HomeFragment extends Fragment {
         TextView tvWelcome = view.findViewById(R.id.tvWelcome);
         CardView cardProg = view.findViewById(R.id.cardProg);
         CardView cardMath = view.findViewById(R.id.cardMath);
+        CardView cardChatAi = view.findViewById(R.id.cardChatAi);
 
         SharedPreferences sharedPf = getActivity().getSharedPreferences("USER_INFO", Context.MODE_PRIVATE);
         String username = sharedPf.getString("USERNAME_USER", "user"); 
@@ -72,6 +75,14 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
         });
 
+        cardChatAi.setOnClickListener(v -> {
+            if (getActivity() instanceof MenuActivity) {
+                ViewPager2 viewPager = getActivity().findViewById(R.id.viewPager);
+                if (viewPager != null) {
+                    viewPager.setCurrentItem(2); // Position 2 is Quiz tab
+                }
+            }
+        });
         return view;
     }
 }
