@@ -27,7 +27,7 @@
             android:insetBottom="0dp"
             android:minWidth="0dp"
             android:minHeight="0dp"
-            android:text="<-"
+            android:text="&lt;-"
             android:textColor="#1A237E"
             android:textSize="18sp"
             app:cornerRadius="8dp" />
