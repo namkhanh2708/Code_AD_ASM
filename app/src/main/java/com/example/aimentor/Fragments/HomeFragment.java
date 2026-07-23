@@ -1,9 +1,11 @@
 package com.example.aimentor.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -12,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.aimentor.R;
+import com.example.aimentor.activities.MathlsActivity;
+import com.example.aimentor.activities.ProgrammingActivity;
 
 public class HomeFragment extends Fragment {
 
@@ -50,11 +54,23 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         TextView tvWelcome = view.findViewById(R.id.tvWelcome);
+        CardView cardProg = view.findViewById(R.id.cardProg);
+        CardView cardMath = view.findViewById(R.id.cardMath);
 
         SharedPreferences sharedPf = getActivity().getSharedPreferences("USER_INFO", Context.MODE_PRIVATE);
         String username = sharedPf.getString("USERNAME_USER", "user"); 
 
-        tvWelcome.setText("Welcom " + username);
+        tvWelcome.setText("Hello " + username + "!");
+
+        cardProg.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ProgrammingActivity.class);
+            startActivity(intent);
+        });
+
+        cardMath.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), MathlsActivity.class);
+            startActivity(intent);
+        });
 
         return view;
     }
